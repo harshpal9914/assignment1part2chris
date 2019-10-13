@@ -1,0 +1,42 @@
+extends ../layout
+
+block content
+	h1= title
+	form(method="POST")
+		input(type="text" value=article.title placeholder="Title" name="title")
+		input(type="text" value=article.authors placeholder="Authors" name="authors")
+		textarea(type="text" placeholder="body" name="body")= article.body
+		button(type="submit") Submit
+
+		head
+  title
+  link(rel='stylesheet' type='text/css' href='css/bootstrap.css')
+  style.
+    .form-control{width: 50%}
+div(style='background-image: url(tableback.jpg);height: 670px; width: 100%; background-size: cover;background-repeat: no-repeat;')
+  div(style='height: 400px; width: 70%; border: solid rgb(1, 28, 36) 2px; background-color: rgba(81, 127, 255, 0.5); border-radius: 15px; float: left;margin-left: 15%; margin-top: 5%')
+    form(action='#' method='post' style='color:white')
+      .row.wow.fadeInUp(data-wow-duration='1000ms' data-wow-delay='300ms')
+        input.form-control(style='background:transparent;border:none;border-bottom: solid white 2px; margin-left: 25%; width: 50%; margin-top: 2%' type='text' name='name' placeholder='*Your Full Name' required='required')
+      br
+      .form-inline
+        .form-group
+          input.form-control(style='background:transparent; border:none;border-bottom: solid white 2px; float: left; margin-left: 250%' type='text' name='name' placeholder='*Phone Number' required='required')
+        .form-group
+          input.form-control(style='background:transparent; border:none;border-bottom: solid white 2px;' type='email' name='email' placeholder='*Email Id' required='required')
+      .form-inline
+        .form-group
+          input.form-control(style='background:transparent; border:none;border-bottom: solid white 2px; float: left;margin-left: 270% ' type='email' name='email' placeholder='*city' required='required')
+        .form-group
+          input.form-control(style='background:transparent; border:none;border-bottom: solid white 2px; ' type='email' name='email' placeholder='*Outlet' required='required')
+      center
+        h1(style='font-size: 20px;color: white; font-family: Courier New; font-weight: bolder;') How can we help?
+      .form-group
+        input.form-control(style='background:transparent;border:none;border-bottom: solid white 2px; margin-left: 25%; width: 50%' type='text' name='subject' placeholder='*Subject' required='required')
+      .form-group
+        textarea#message.form-control(style='background:transparent; border:none;border: solid white 1.2px; margin-left: 25%' name='message' rows='4' placeholder='Enter your message' required='required')
+      .form-group
+        center
+          button.btn.btn-success(type='submit') Send
+          | &amp;nbsp&amp;nbsp
+          button.btn.btn-reset(type='reset') Reset
